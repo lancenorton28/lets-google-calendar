@@ -1,0 +1,51 @@
+{
+  "name": "@lets/google-calendar",
+  "version": "0.1.0",
+  "description": "Drop-in Google Calendar OAuth + event CRUD for Express apps. Four injection points, zero coupling to your DB or auth.",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "check": "tsc -p tsconfig.test.json",
+    "prepublishOnly": "npm run check && npm test && npm run build"
+  },
+  "keywords": [
+    "google-calendar",
+    "google",
+    "oauth2",
+    "express",
+    "lets",
+    "typescript"
+  ],
+  "license": "MIT",
+  "peerDependencies": {
+    "express": "^4.18.0 || ^5.0.0",
+    "zod": "^3.22.0"
+  },
+  "dependencies": {
+    "googleapis": "^148.0.0"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.0",
+    "@types/node": "^20.19.0",
+    "typescript": "5.6.3",
+    "vitest": "^2.1.0"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
